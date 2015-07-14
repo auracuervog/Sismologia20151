@@ -1,0 +1,117 @@
+This file is for defaults for SEISAN and called SEISAN.DEF. The name must
+be in upper case on Sun. The following shows the parameters which can be set.
+The file can contain any lines in any order, only the lines with 
+recognized keywords and a non blank field under Par 1 will be read. The
+comments have no importance.
+
+KEYWORD............Comments.............Par 1.....Par 2
+WAVEFORM_BASE      Waveform base name   NSS
+WAVEFORM_BASE      Waveform base name   RUND
+WAVEFORM_BASE      Waveform base name   JMI
+WAVEFORM_BASE      Waveform base name   TEST
+#
+#   seisan cont dat abase
+#
+CONT_BASE          REA continuous base  RUND
+CONT_BASE          REA continuous base  JMI
+CONT_BASE          REA continuous base  NSS
+CONT_BEFORE        start min before     20.
+CONT_AFTER         start min after      1.
+#
+# archive
+#
+ARC_CHAN                                SFJD LHZIU10
+ARC_CHAN                                KBS  LHZGE10
+ARC_CHAN                                DAG  LHZGE
+ARC_CHAN                                TULEGLHZDK
+ARC_CHAN                                BSD  LHZDK
+ARC_CHAN                                BORG LHZII10
+ARC_ARCHIVE                             ./archive                         
+
+CURSOR             0: default, 1: cross 1.
+FOCMEC MAXSOL      max solutions        125.
+
+WAVEFORM_DIRS      Waveform drectory    /net/seismo/seismo/WOR/seisnet
+MERGE_WAVEFORM     Code for merging wa  NSN
+MAP_LAT_BORDER     dist from center       3.0
+MAP_LON_BORDER          "                 6.0
+EPIMAP_STATIONS    plot stations
+EPIMAP_MAP_FILE    name of map          EUROPE 
+EPIMAP_PROJECTION  number                  3.
+SPECTRAL GEO_DEPTHS                     10.0       14.0
+HERKIJ_DISTANCE                         100.0
+REG_KEEP_AUTO      keep phases when reg    1.
+COPY_WAV_DIR       copy when register   
+
+TEXT_PRINT               Unix example   nenscript -Psps
+OUTPUT_DIR                              ./
+INIT_IMGMAP_FILE         PC example     c:/seismo/DAT/IMGWORLD.gif
+MAP_SERVER                              0
+IMGMAP_PATH              PC example     c:/seismo/DAT/IMGMAP
+INIT_MAP_LOWER_LATITUDE                 -90.0
+INIT_MAP_UPPER_LATITUDE                 90.0
+INIT_MAP_LEFT_LONGITUDE                 -180.0
+INIT_MAP_RIGHT_LONGITUDE                180.0
+INTERNET_BROWSER         Unix example   /prog/netscape
+ACROBAT_READER           PC example     C:\Program Files\Adobe\Acrobat 5.0\Reader\AcroRd32
+HELP_DIR                 PC   example   c:/seismo/INF
+WEBMAPSERVER2                           http://pcseis6.ifjf.uib.no:7001/getImageMap?ACTION=2&
+WEBMAPSERVER3                           http://demo.cubewerx.com/demo/cubeserv/cubeserv.cgi?
+
+# parameters for gmap used within eev
+GMAP_DIR                                c:/seismo/WOR
+GMAP_TYPE                               MAP          [MAP, SATELLITE, HYBRID, TERRAIN]
+
+# parameters for gmap
+GMAP_ICON_QUAKE                         http://maps.google.com/mapfiles/kml/pal2/icon26.png
+GMAP_ICON_EXPLOSION                     http://maps.google.com/mapfiles/kml/shapes/star.png
+GMAP_ICON_PROB_EXPL                     http://maps.google.com/mapfiles/kml/shapes/open-diamond.png
+GMAP_ICON_OTHER_EVENTS                  http://maps.google.com/mapfiles/kml/shapes/square.png
+GMAP_ICON_MSIZE                         0.5
+GMAP_ICON_XSIZE                         0.2
+GMAP_ICON_YSIZE                         0.5
+#GMAP_APPEND_KML                         <!-- lines to be appended to the gmap.kml file : -->
+GMAP_APPEND_KML                         <ScreenOverlay id="LOGO">
+GMAP_APPEND_KML                         <name>Info and links</name>
+GMAP_APPEND_KML                         <description> <![CDATA[
+GMAP_APPEND_KML                         Data is in Nordic format. The format is <br>
+GMAP_APPEND_KML                         described in the Seisan manual at UIB.<br>
+GMAP_APPEND_KML                         UIB:  http://www.geo.uib.no/seismo/<br> ]]>
+GMAP_APPEND_KML                         </description>
+GMAP_APPEND_KML                         <Icon>
+GMAP_APPEND_KML                          <href>http://seis.geus.net/geus.png</href>
+GMAP_APPEND_KML                         </Icon>
+GMAP_APPEND_KML                         <overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+GMAP_APPEND_KML                         <screenXY x="-0.01" y="0.99" xunits="fraction" yunits="fraction"/>
+GMAP_APPEND_KML                         <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+GMAP_APPEND_KML                         <size x="0.1" y="0.1" xunits="fraction" yunits="fraction"/>
+GMAP_APPEND_KML                         </ScreenOverlay>
+#GMAP_APPEND_KML                         <!-- end of appended lines -->
+
+# parameters for automatic gmap
+GMAP_AUTO      0: no, 1:yes             1.0
+GMAP_AUTO_ICON_EVENT                    http://maps.google.com/mapfiles/kml/pal2/icon26.png
+GMAP_AUTO_ICON_COLOR                    ff0000ff
+GMAP_AUTO_ICON_MSIZE                    0.5
+GMAP_AUTO_ICON_XSIZE                    0.2
+GMAP_AUTO_ICON_YSIZE                    0.5
+GMAP_AUTO_LOOKAT_ALTITUDE               2000000.0
+GMAP_AUTO_SHOW_STAT  0: no, 1:yes       1.
+GMAP_AUTO_ERROR_ELLIPSE  0: no, 1:yes   1.
+GMAP_AUTO_STAT_SIZE                     1.1
+GMAP_AUTO_STAT_URL                      http://maps.google.com/mapfiles/kml/shapes/triangle.png
+GMAP_AUTO_STAT_RESIDAL_GOOD             0.5
+GMAP_AUTO_STAT_RESIDUAL_BAD             1.5
+GMAP_AUTO_STAT_COLOR_GOOD               ff00ff00
+GMAP_AUTO_STAT_COLOR_OK                 ff00ffff
+GMAP_AUTO_STAT_COLOR_BAD                ff0000ff
+GMAP_AUTO_SHOW_OLD_LOCATION 0:no,1:yes  1.
+GMAP_AUTO_OLD_LOCATION_COLOR            ffff0000
+GMAP_AUTO_SHOW_PATH   0: no, 1:yes      1.
+GMAP_AUTO_PATH_COLOR                    ff929292
+GMAP_AUTO_PATH_WIDTH                    2.5
+GMAP_AUTO_FILE_ACTION  0: no, 1:yes     0.
+GMAP_AUTO_ACTION                        cp gmap.cur.kml /inetpub/www/html/seismo/nnsn
+# e.g. GMAP_AUTO_ACTION    ncftpput -u seismo -p passwd ftp.server /home/seismo/www gmap.cur.kml
+
+
